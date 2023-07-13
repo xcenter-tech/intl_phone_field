@@ -175,7 +175,7 @@ class IntlPhoneField extends StatefulWidget {
   final String searchText;
 
   /// Position of an icon [leading, trailing]
-  final IconPosition dropdownIconPosition;
+  // final IconPosition dropdownIconPosition;
 
   /// Icon of the drop down button.
   ///
@@ -242,53 +242,61 @@ class IntlPhoneField extends StatefulWidget {
 
   //enable the autofill hint for phone number
   final bool disableAutoFillHints;
+  final double flagSize;
+  final Widget? trailing;
+  final double prefixButtonWidth;
+  final DropdownIconPosition? dropdownIconPosition;
 
-  const IntlPhoneField({
-    Key? key,
-    this.initialCountryCode,
-    this.languageCode = 'en',
-    this.disableAutoFillHints = false,
-    this.obscureText = false,
-    this.textAlign = TextAlign.left,
-    this.textAlignVertical,
-    this.onTap,
-    this.readOnly = false,
-    this.initialValue,
-    this.keyboardType = TextInputType.phone,
-    this.controller,
-    this.focusNode,
-    this.decoration = const InputDecoration(),
-    this.style,
-    this.dropdownTextStyle,
-    this.onSubmitted,
-    this.validator,
-    this.onChanged,
-    this.countries,
-    this.onCountryChanged,
-    this.onSaved,
-    this.showDropdownIcon = true,
-    this.dropdownDecoration = const BoxDecoration(),
-    this.inputFormatters,
-    this.enabled = true,
-    this.keyboardAppearance,
-    @Deprecated('Use searchFieldInputDecoration of PickerDialogStyle instead') this.searchText = 'Search country',
-    this.dropdownIconPosition = IconPosition.leading,
-    this.dropdownIcon = const Icon(Icons.arrow_drop_down),
-    this.autofocus = false,
-    this.textInputAction,
-    this.autovalidateMode = AutovalidateMode.onUserInteraction,
-    this.showCountryFlag = true,
-    this.cursorColor,
-    this.disableLengthCheck = false,
-    this.flagsButtonPadding = EdgeInsets.zero,
-    this.invalidNumberMessage = 'Invalid Mobile Number',
-    this.cursorHeight,
-    this.cursorRadius = Radius.zero,
-    this.cursorWidth = 2.0,
-    this.showCursor = true,
-    this.pickerDialogStyle,
-    this.flagsButtonMargin = EdgeInsets.zero,
-  }) : super(key: key);
+  const IntlPhoneField(
+      {Key? key,
+      this.initialCountryCode,
+      this.languageCode = 'en',
+      this.disableAutoFillHints = false,
+      this.obscureText = false,
+      this.textAlign = TextAlign.left,
+      this.textAlignVertical,
+      this.onTap,
+      this.readOnly = false,
+      this.initialValue,
+      this.keyboardType = TextInputType.phone,
+      this.controller,
+      this.focusNode,
+      this.decoration = const InputDecoration(),
+      this.style,
+      this.dropdownTextStyle,
+      this.onSubmitted,
+      this.validator,
+      this.onChanged,
+      this.countries,
+      this.onCountryChanged,
+      this.onSaved,
+      this.showDropdownIcon = true,
+      this.dropdownDecoration = const BoxDecoration(),
+      this.inputFormatters,
+      this.enabled = true,
+      this.keyboardAppearance,
+      this.dropdownIconPosition,
+      @Deprecated('Use searchFieldInputDecoration of PickerDialogStyle instead') this.searchText = 'Search country',
+      // this.dropdownIconPosition = IconPosition.leading,
+      this.dropdownIcon = const Icon(Icons.keyboard_arrow_down_rounded),
+      this.autofocus = false,
+      this.textInputAction,
+      this.autovalidateMode = AutovalidateMode.onUserInteraction,
+      this.showCountryFlag = true,
+      this.cursorColor,
+      this.disableLengthCheck = false,
+      this.flagsButtonPadding = EdgeInsets.zero,
+      this.invalidNumberMessage = 'Invalid Mobile Number',
+      this.cursorHeight,
+      this.cursorRadius = Radius.zero,
+      this.cursorWidth = 2.0,
+      this.showCursor = true,
+      this.pickerDialogStyle,
+      this.flagsButtonMargin = EdgeInsets.zero,
+      this.flagSize = 18.0,
+      this.prefixButtonWidth = 70.0,
+      this.trailing})
+      : super(key: key);
 
   @override
   _IntlPhoneFieldState createState() => _IntlPhoneFieldState();
@@ -439,6 +447,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
 
   Container _buildFlagsButton() {
     return Container(
+      width: widget.prefixButtonWidth,
       margin: widget.flagsButtonMargin,
       child: DecoratedBox(
         decoration: widget.dropdownDecoration,
@@ -447,46 +456,70 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
           onTap: widget.enabled ? _changeCountry : null,
           child: Padding(
             padding: widget.flagsButtonPadding,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const SizedBox(
-                  width: 4,
-                ),
-                if (widget.enabled &&
-                    widget.showDropdownIcon &&
-                    widget.dropdownIconPosition == IconPosition.leading) ...[
-                  widget.dropdownIcon,
-                  const SizedBox(width: 4),
-                ],
-                if (widget.showCountryFlag) ...[
-                  kIsWeb
-                      ? Image.asset(
-                          'assets/flags/${_selectedCountry.code.toLowerCase()}.png',
-                          package: 'intl_phone_field',
-                          width: 32,
-                        )
-                      : Text(
-                          _selectedCountry.flag,
-                          style: const TextStyle(fontSize: 18),
+            child: IntrinsicHeight(
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 0,
+                    bottom: 0,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        // if (widget.enabled &&
+                        //     widget.showDropdownIcon &&
+                        //     widget.dropdownIconPosition == IconPosition.leading) ...[
+                        //   widget.dropdownIcon,
+                        //   const SizedBox(width: 4),
+                        // ],
+                        if (widget.showCountryFlag) ...[
+                          kIsWeb
+                              ? Image.asset(
+                                  'assets/flags/${_selectedCountry.code.toLowerCase()}.png',
+                                  package: 'intl_phone_field',
+                                  width: 32,
+                                )
+                              : Text(
+                                  _selectedCountry.flag,
+                                  style: TextStyle(fontSize: widget.flagSize),
+                                ),
+                          const SizedBox(width: 4),
+                        ],
+                        FittedBox(
+                          child: Text(
+                            '(${_selectedCountry.dialCode})',
+                            style: widget.dropdownTextStyle,
+                          ),
                         ),
-                  const SizedBox(width: 8),
-                ],
-                FittedBox(
-                  child: Text(
-                    '+${_selectedCountry.dialCode}',
-                    style: widget.dropdownTextStyle,
+                        // if (widget.enabled &&
+                        //     widget.showDropdownIcon &&
+                        //     widget.dropdownIconPosition == IconPosition.trailing) ...[
+                        //   // const SizedBox(width: 4),
+                        //   widget.dropdownIcon,
+                        // ],
+                        const SizedBox(width: 4),
+                        if (widget.trailing != null) ...[
+                          widget.trailing!,
+                          const SizedBox(
+                            width: 2,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          )
+                        ],
+                      ],
+                    ),
                   ),
-                ),
-                if (widget.enabled &&
-                    widget.showDropdownIcon &&
-                    widget.dropdownIconPosition == IconPosition.trailing) ...[
-                  const SizedBox(width: 4),
-                  widget.dropdownIcon,
+                  if (widget.enabled && widget.showDropdownIcon) ...[
+                    Positioned(
+                        bottom: widget.dropdownIconPosition?.bottom,
+                        top: widget.dropdownIconPosition?.top,
+                        left: widget.dropdownIconPosition?.left,
+                        right: widget.dropdownIconPosition?.right,
+                        child: widget.dropdownIcon),
+                  ],
                 ],
-                const SizedBox(width: 8),
-              ],
+              ),
             ),
           ),
         ),
@@ -495,7 +528,12 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   }
 }
 
-enum IconPosition {
-  leading,
-  trailing,
+class DropdownIconPosition {
+  final double? top, bottom, left, right;
+  DropdownIconPosition({this.top, this.bottom = 0, this.left = 16, this.right});
 }
+
+// enum IconPosition {
+//   leading,
+//   trailing,
+// }

@@ -24,18 +24,26 @@ class PickerDialogStyle {
 
   final double? width;
 
-  PickerDialogStyle({
-    this.backgroundColor,
-    this.countryCodeStyle,
-    this.countryNameStyle,
-    this.listTileDivider,
-    this.listTilePadding,
-    this.padding,
-    this.searchFieldCursorColor,
-    this.searchFieldInputDecoration,
-    this.searchFieldPadding,
-    this.width,
-  });
+  final TextStyle? searchFieldTextStyle;
+
+  final double? searchFieldHeight;
+
+  final double? searchFieldWidth;
+
+  PickerDialogStyle(
+      {this.backgroundColor,
+      this.countryCodeStyle,
+      this.countryNameStyle,
+      this.listTileDivider,
+      this.listTilePadding,
+      this.padding,
+      this.searchFieldCursorColor,
+      this.searchFieldInputDecoration,
+      this.searchFieldPadding,
+      this.width,
+      this.searchFieldTextStyle,
+      this.searchFieldHeight,
+      this.searchFieldWidth});
 }
 
 class CountryPickerDialog extends StatefulWidget {
@@ -96,20 +104,26 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
           children: <Widget>[
             Padding(
               padding: widget.style?.searchFieldPadding ?? const EdgeInsets.all(0),
-              child: TextField(
-                cursorColor: widget.style?.searchFieldCursorColor,
-                decoration: widget.style?.searchFieldInputDecoration ??
-                    InputDecoration(
-                      suffixIcon: const Icon(Icons.search),
-                      labelText: widget.searchText,
-                    ),
-                onChanged: (value) {
-                  _filteredCountries = widget.countryList.stringSearch(value)
-                    ..sort(
-                      (a, b) => a.localizedName(widget.languageCode).compareTo(b.localizedName(widget.languageCode)),
-                    );
-                  if (mounted) setState(() {});
-                },
+              child: SizedBox(
+                height: widget.style?.searchFieldHeight,
+                width: widget.style?.searchFieldWidth,
+                child: TextField(
+                  autocorrect: false,
+                  style: widget.style?.searchFieldTextStyle,
+                  cursorColor: widget.style?.searchFieldCursorColor,
+                  decoration: widget.style?.searchFieldInputDecoration ??
+                      InputDecoration(
+                        suffixIcon: const Icon(Icons.search),
+                        labelText: widget.searchText,
+                      ),
+                  onChanged: (value) {
+                    _filteredCountries = widget.countryList.stringSearch(value)
+                      ..sort(
+                        (a, b) => a.localizedName(widget.languageCode).compareTo(b.localizedName(widget.languageCode)),
+                      );
+                    if (mounted) setState(() {});
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -145,7 +159,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                         Navigator.of(context).pop();
                       },
                     ),
-                    widget.style?.listTileDivider ?? const Divider(thickness: 1),
+                    widget.style?.listTileDivider ?? const SizedBox(),
                   ],
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 void main() {
@@ -54,6 +55,18 @@ class _MyAppState extends State<MyApp> {
                   height: 10,
                 ),
                 IntlPhoneField(
+                  trailing: Text('|'),
+                  dropdownIconPosition: DropdownIconPosition(left: 12),
+                  flagsButtonPadding: EdgeInsets.only(left: 4),
+                  prefixButtonWidth: 65,
+                  dropdownIcon: Icon(
+                    Icons.keyboard_arrow_down,
+                    size: 16,
+                  ),
+                  flagsButtonMargin: EdgeInsets.symmetric(horizontal: 4),
+                  flagSize: 12,
+                  pickerDialogStyle:
+                      PickerDialogStyle(searchFieldHeight: 30, searchFieldTextStyle: TextStyle(color: Colors.blue)),
                   focusNode: focusNode,
                   decoration: InputDecoration(
                     labelText: 'Phone Number',
