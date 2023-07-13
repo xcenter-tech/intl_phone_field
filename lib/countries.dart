@@ -29,6 +29,8 @@ const List<Country> countries = [
     },
     flag: "🇦🇫",
     code: "AF",
+    code3: 'AFG',
+    continent: 'asia',
     dialCode: "93",
     minLength: 9,
     maxLength: 9,
@@ -344,6 +346,8 @@ const List<Country> countries = [
     maxLength: 12,
   ),
   Country(
+    code3: 'ARM',
+    continent: 'asia',
     name: "Armenia",
     nameTranslations: {
       "sk": "Arménsko",
@@ -468,6 +472,8 @@ const List<Country> countries = [
     maxLength: 13,
   ),
   Country(
+    code3: 'AZE',
+    continent: 'asia',
     name: "Azerbaijan",
     nameTranslations: {
       "sk": "Azerbajdžan",
@@ -530,6 +536,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'BHR',
+    continent: 'asia',
     name: "Bahrain",
     nameTranslations: {
       "sk": "Bahrajn",
@@ -561,6 +569,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'BGD',
+    continent: 'asia',
     name: "Bangladesh",
     nameTranslations: {
       "sk": "Bangladéš",
@@ -778,6 +788,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'BTN',
+    continent: 'asia',
     name: "Bhutan",
     nameTranslations: {
       "sk": "Bhután",
@@ -995,6 +1007,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'BRN',
+    continent: 'asia',
     name: "Brunei Darussalam",
     nameTranslations: {
       "sk": "Brunej",
@@ -1119,6 +1133,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'KHM',
+    continent: 'asia',
     name: "Cambodia",
     nameTranslations: {
       "sk": "Kambodža",
@@ -1336,6 +1352,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'CHN',
+    continent: 'asia',
     name: "China",
     nameTranslations: {
       "sk": "Čína",
@@ -2421,6 +2439,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'GEO',
+    continent: 'asia',
     name: "Georgia",
     nameTranslations: {
       "sk": "Gruzínsko",
@@ -3072,6 +3092,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'IND',
+    continent: 'asia',
     name: "India",
     nameTranslations: {
       "sk": "India",
@@ -3103,6 +3125,8 @@ const List<Country> countries = [
     maxLength: 10,
   ),
   Country(
+    code3: 'IDN',
+    continent: 'asia',
     name: "Indonesia",
     nameTranslations: {
       "sk": "Indonézia",
@@ -3134,6 +3158,8 @@ const List<Country> countries = [
     maxLength: 13,
   ),
   Country(
+    code3: 'IRN',
+    continent: 'asia',
     name: "Iran, Islamic Republic of Persian Gulf",
     nameTranslations: {
       "sk": "Irán",
@@ -3165,6 +3191,8 @@ const List<Country> countries = [
     maxLength: 10,
   ),
   Country(
+    code3: 'IRQ',
+    continent: 'asia',
     name: "Iraq",
     nameTranslations: {
       "sk": "Irak",
@@ -3258,6 +3286,8 @@ const List<Country> countries = [
     maxLength: 6,
   ),
   Country(
+    code3: 'ISR',
+    continent: 'asia',
     name: "Israel",
     nameTranslations: {
       "sk": "Izrael",
@@ -3351,6 +3381,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'JPN',
+    continent: 'asia',
     name: "Japan",
     nameTranslations: {
       "sk": "Japonsko",
@@ -3413,6 +3445,8 @@ const List<Country> countries = [
     maxLength: 6,
   ),
   Country(
+    code3: 'JOR',
+    continent: 'asia',
     name: "Jordan",
     nameTranslations: {
       "sk": "Jordánsko",
@@ -3444,6 +3478,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'KAZ',
+    continent: 'asia',
     name: "Kazakhstan",
     nameTranslations: {
       "sk": "Kazachstan",
@@ -3537,6 +3573,8 @@ const List<Country> countries = [
     maxLength: 5,
   ),
   Country(
+    code3: 'PKR',
+    continent: 'asia',
     name: "Korea, Democratic People's Republic of Korea",
     nameTranslations: {
       "sk": "Severná Kórea",
@@ -3568,6 +3606,8 @@ const List<Country> countries = [
     maxLength: 10,
   ),
   Country(
+    code3: 'KOR',
+    continent: 'asia',
     name: "Korea, Republic of South Korea",
     nameTranslations: {
       "sk": "Južná Kórea",
@@ -3599,6 +3639,8 @@ const List<Country> countries = [
     maxLength: 11,
   ),
   Country(
+    code3: 'KWT',
+    continent: 'asia',
     name: "Kuwait",
     nameTranslations: {
       "sk": "Kuvajt",
@@ -3630,6 +3672,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'KGZ',
+    continent: 'asia',
     name: "Kyrgyzstan",
     nameTranslations: {
       "sk": "Kirgizsko",
@@ -3661,6 +3705,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'LAO',
+    continent: 'asia',
     name: "Laos",
     nameTranslations: {
       "sk": "Laos",
@@ -3723,6 +3769,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'LBN',
+    continent: 'asia',
     name: "Lebanon",
     nameTranslations: {
       "sk": "Libanon",
@@ -4064,6 +4112,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'MYS',
+    continent: 'asia',
     name: "Malaysia",
     nameTranslations: {
       "sk": "Malajzia",
@@ -4095,6 +4145,8 @@ const List<Country> countries = [
     maxLength: 11,
   ),
   Country(
+    code3: 'MDV',
+    continent: 'asia',
     name: "Maldives",
     nameTranslations: {
       "sk": "Maldivy",
@@ -4467,6 +4519,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'MNG',
+    continent: 'asia',
     name: "Mongolia",
     nameTranslations: {
       "sk": "Mongolsko",
@@ -4622,6 +4676,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'MMR',
+    continent: 'asia',
     name: "Myanmar",
     nameTranslations: {
       "sk": "Mjanmarsko",
@@ -4715,6 +4771,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'NPL',
+    continent: 'asia',
     name: "Nepal",
     nameTranslations: {
       "sk": "Nepál",
@@ -5056,6 +5114,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'OMN',
+    continent: 'asia',
     name: "Oman",
     nameTranslations: {
       "sk": "Omán",
@@ -5087,6 +5147,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'PAK',
+    continent: 'asia',
     name: "Pakistan",
     nameTranslations: {
       "sk": "Pakistan",
@@ -5149,6 +5211,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'PSE',
+    continent: 'asia',
     name: "Palestinian Territory, Occupied",
     nameTranslations: {
       "sk": "Palestínske územia",
@@ -5304,6 +5368,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'PHL',
+    continent: 'asia',
     name: "Philippines",
     nameTranslations: {
       "sk": "Filipíny",
@@ -5459,6 +5525,8 @@ const List<Country> countries = [
     maxLength: 15,
   ),
   Country(
+    code3: 'QAT',
+    continent: 'asia',
     name: "Qatar",
     nameTranslations: {
       "sk": "Katar",
@@ -5924,6 +5992,8 @@ const List<Country> countries = [
     maxLength: 7,
   ),
   Country(
+    code3: 'SAU',
+    continent: 'asia',
     name: "Saudi Arabia",
     nameTranslations: {
       "sk": "Saudská Arábia",
@@ -6079,6 +6149,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'SGP',
+    continent: 'asia',
     name: "Singapore",
     nameTranslations: {
       "sk": "Singapur",
@@ -6358,6 +6430,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'LKA',
+    continent: 'asia',
     name: "Sri Lanka",
     nameTranslations: {
       "sk": "Srí Lanka",
@@ -6575,6 +6649,8 @@ const List<Country> countries = [
     maxLength: 12,
   ),
   Country(
+    code3: 'SYR',
+    continent: 'asia',
     name: "Syrian Arab Republic",
     nameTranslations: {
       "sk": "Sýria",
@@ -6606,6 +6682,8 @@ const List<Country> countries = [
     maxLength: 10,
   ),
   Country(
+    code3: 'TWN',
+    continent: 'asia',
     name: "Taiwan",
     nameTranslations: {
       "sk": "Taiwan",
@@ -6637,6 +6715,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'TJK',
+    continent: 'asia',
     name: "Tajikistan",
     nameTranslations: {
       "sk": "Tadžikistan",
@@ -6699,6 +6779,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'THA',
+    continent: 'asia',
     name: "Thailand",
     nameTranslations: {
       "sk": "Thajsko",
@@ -6916,6 +6998,8 @@ const List<Country> countries = [
     maxLength: 8,
   ),
   Country(
+    code3: 'TUR',
+    continent: 'asia',
     name: "Turkey",
     nameTranslations: {
       "sk": "Turecko",
@@ -6947,6 +7031,8 @@ const List<Country> countries = [
     maxLength: 10,
   ),
   Country(
+    code3: 'TKM',
+    continent: 'asia',
     name: "Turkmenistan",
     nameTranslations: {
       "sk": "Turkménsko",
@@ -7102,6 +7188,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'ARE',
+    continent: 'asia',
     name: "United Arab Emirates",
     nameTranslations: {
       "sk": "Spojené arabské emiráty",
@@ -7226,6 +7314,8 @@ const List<Country> countries = [
     maxLength: 9,
   ),
   Country(
+    code3: 'UZB',
+    continent: 'asia',
     name: "Uzbekistan",
     nameTranslations: {
       "sk": "Uzbekistan",
@@ -7319,6 +7409,8 @@ const List<Country> countries = [
     maxLength: 10,
   ),
   Country(
+    code3: 'VNM',
+    continent: 'asia',
     name: "Vietnam",
     nameTranslations: {
       "sk": "Vietnam",
@@ -7443,6 +7535,8 @@ const List<Country> countries = [
     maxLength: 6,
   ),
   Country(
+    code3: 'YEM',
+    continent: 'asia',
     name: "Yemen",
     nameTranslations: {
       "sk": "Jemen",
@@ -7545,17 +7639,20 @@ class Country {
   final String regionCode;
   final int minLength;
   final int maxLength;
+  final String code3;
+  final String continent;
 
-  const Country({
-    required this.name,
-    required this.flag,
-    required this.code,
-    required this.dialCode,
-    required this.nameTranslations,
-    required this.minLength,
-    required this.maxLength,
-    this.regionCode = "",
-  });
+  const Country(
+      {required this.name,
+      required this.flag,
+      required this.code,
+      required this.dialCode,
+      required this.nameTranslations,
+      required this.minLength,
+      required this.maxLength,
+      this.regionCode = "",
+      this.code3 = "",
+      this.continent = ""});
 
   String get fullCountryCode {
     return dialCode + regionCode;
