@@ -325,7 +325,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       // remove country code from the initial number value
       number = number.replaceFirst(RegExp("^${_selectedCountry.fullCountryCode}"), "");
     } else {
-      _selectedCountry = _countryList.firstWhere((item) => item.code == (widget.initialCountryCode ?? 'US'),
+      _selectedCountry = _countryList.firstWhere((item) => item.code3 == (widget.initialCountryCode ?? 'US'),
           orElse: () => _countryList.first);
 
       // remove country code from the initial number value
@@ -338,7 +338,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
 
     if (widget.autovalidateMode == AutovalidateMode.always) {
       final initialPhoneNumber = PhoneNumber(
-        countryISOCode: _selectedCountry.code,
+        countryISOCode: _selectedCountry.code3,
         countryCode: '+${_selectedCountry.dialCode}',
         number: widget.initialValue ?? '',
       );
@@ -405,7 +405,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       onSaved: (value) {
         widget.onSaved?.call(
           PhoneNumber(
-            countryISOCode: _selectedCountry.code,
+            countryISOCode: _selectedCountry.code3,
             countryCode: '+${_selectedCountry.dialCode}${_selectedCountry.regionCode}',
             number: value!,
           ),
@@ -413,7 +413,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
       },
       onChanged: (value) async {
         final phoneNumber = PhoneNumber(
-          countryISOCode: _selectedCountry.code,
+          countryISOCode: _selectedCountry.code3,
           countryCode: '+${_selectedCountry.fullCountryCode}',
           number: value,
         );
