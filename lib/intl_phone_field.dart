@@ -114,6 +114,9 @@ class IntlPhoneField extends StatefulWidget {
   /// [Decoration.enabled] property.
   final bool enabled;
 
+  // This is to enable/disable picker dialog on tap
+  final bool enabledPickerDialog;
+
   /// The appearance of the keyboard.
   ///
   /// This setting is only honored on iOS devices.
@@ -275,6 +278,7 @@ class IntlPhoneField extends StatefulWidget {
       this.dropdownDecoration = const BoxDecoration(),
       this.inputFormatters,
       this.enabled = true,
+      this.enabledPickerDialog = true,
       this.keyboardAppearance,
       this.dropdownIconPosition,
       @Deprecated('Use searchFieldInputDecoration of PickerDialogStyle instead') this.searchText = 'Search country',
@@ -456,7 +460,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
         decoration: widget.dropdownDecoration,
         child: InkWell(
           borderRadius: widget.dropdownDecoration.borderRadius as BorderRadius?,
-          onTap: widget.enabled ? _changeCountry : null,
+          onTap: widget.enabledPickerDialog ? _changeCountry : null,
           child: Padding(
             padding: widget.flagsButtonPadding,
             child: IntrinsicHeight(
