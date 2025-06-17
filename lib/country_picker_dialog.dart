@@ -79,9 +79,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
     _selectedCountry = widget.selectedCountry;
     _filteredCountries = widget.filteredCountries.toList()
       ..sort(
-        (a, b) => a
-            .localizedName(widget.languageCode)
-            .compareTo(b.localizedName(widget.languageCode)),
+        (a, b) => a.localizedName(widget.languageCode).compareTo(b.localizedName(widget.languageCode)),
       );
 
     super.initState();
@@ -108,8 +106,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding:
-                  widget.style?.searchFieldPadding ?? const EdgeInsets.all(0),
+              padding: widget.style?.searchFieldPadding ?? const EdgeInsets.all(0),
               child: SizedBox(
                 height: widget.style?.searchFieldHeight,
                 width: widget.style?.searchFieldWidth,
@@ -125,9 +122,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                   onChanged: (value) {
                     _filteredCountries = widget.countryList.stringSearch(value)
                       ..sort(
-                        (a, b) => a
-                            .localizedName(widget.languageCode)
-                            .compareTo(b.localizedName(widget.languageCode)),
+                        (a, b) => a.localizedName(widget.languageCode).compareTo(b.localizedName(widget.languageCode)),
                       );
                     if (mounted) setState(() {});
                   },
@@ -142,6 +137,8 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                 itemBuilder: (ctx, index) => Column(
                   children: <Widget>[
                     ListTile(
+                      dense: true,
+                      minTileHeight: 16,
                       // leading: kIsWeb
                       //     ? Image.asset(
                       //         'assets/flags/${_filteredCountries[index].code.toLowerCase()}.png',
@@ -154,14 +151,10 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                       //       ),
                       // contentPadding: widget.style?.listTilePadding,
                       title: Text(
-                        _filteredCountries[index]
-                            .localizedName(widget.languageCode),
+                        _filteredCountries[index].localizedName(widget.languageCode),
                         textAlign: TextAlign.left,
                         style: widget.style?.countryNameStyle ??
-                            const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 12,
-                                color: Colors.black),
+                            const TextStyle(fontWeight: FontWeight.w400, fontSize: 12, color: Colors.black),
                       ),
                       // trailing: Text(
                       //   '+${_filteredCountries[index].dialCode}',
@@ -174,7 +167,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                         Navigator.of(context).pop();
                       },
                     ),
-                    // widget.style?.listTileDivider ?? const SizedBox(),
+                    widget.style?.listTileDivider ?? const SizedBox(),
                   ],
                 ),
               ),
