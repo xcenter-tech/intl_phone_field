@@ -130,6 +130,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
               ),
             ),
             const SizedBox(height: 20),
+            widget.style?.listTileDivider ?? const SizedBox(),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -167,7 +168,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                         Navigator.of(context).pop();
                       },
                     ),
-                    widget.style?.listTileDivider ?? const SizedBox(),
+                    // widget.style?.listTileDivider ?? const SizedBox(),
                   ],
                 ),
               ),
